@@ -42,5 +42,14 @@ services:
     depends_on:
       - mysql
 
+  mssql:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql-db
+    ports:
+      - '1433:1433'
+    environment:
+      SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
+
 volumes:
   db_data:
